@@ -1,0 +1,46 @@
+ssh-keygen -t rsa -C "370388947@qq.com" 用ssh关联远程的库 就不用每次都输入密码，拷贝pub的内容进去
+git remote add origin 远程仓库地址 与远程仓库origin建立连接
+git push origin 远程仓库分支名字  本地有内容可以提交的时候可以创建远程分支
+git branch test 创建本地分支test
+git init 将本地的文件夹变成git仓库
+git commit -m 'first'  提交并且加上注释
+sit status 查看文件的状态
+git branch -d test  删除本地的test分支
+git add .  添加修改了的文件
+git clone -b test git@github.com:swtandyz/Test.git 从远程仓库拉取远程仓库的test分支 在本地会生成相应的test分支
+git checkout master 切换本地分支
+git remote   查看远程仓库的名字
+git branch   查看本地分支
+git branch -a 查看本地与远程的分支
+git push origin test  将本地master的变动 推送到远程库origin的test 分支上
+git diff origin/test  比较远程test分支与本地所选择的分支的区别
+git pull origin test 拉取并合并远程的test分支到本地
+git fetch origin test 拉取远程的origin库的test分支到本地所选择的分支上
+git merge origin/test  合并远程分支的origin库的test分支到本地所选择的库上
+$ git branch -m master newmaster 修改本地分支的名字
+
+
+
+
+开发必备
+首先生成ssh
+ssh-keygen -t rsa -C "370388947@qq.com" 用ssh关联远程的库 就不用每次都输入密码，拷贝pub的内容进去
+直接克隆代码用ssh地址克隆，这样不用每次都要输入密码
+进入一个你想要放置的文件夹位置 比如F：USER目录下新建一个空文件夹 进去右键 git bash here
+实例拉取远程分支
+git clone -b test git@github.com:swtandyz/Test.git 从远程仓库拉取远程仓库的test分支 在本地会生成相应的test分支
+也可以拉取mater分支 
+git clone git@github.com:swtandyz/Test.git 
+如果本地有更新
+可以先git status 查看所有文件的状态
+在git add .提交所有的修改
+git commit -m '这里写提交备注' 将所有的修改提交至缓存区
+为了防止远程冲突 这个时候先拉取远程最新的代码到本地 在本地解决冲突 
+git fetch origin test 这是拉取远程origin的test分支最新的代码到本地所选择的分支
+git merge origin/test 讲远程的origin的test分支合并到本地所选择的分支
+如果有冲突在本地解决完冲突
+最后一步推送代码
+git push origin test 讲本地有变动的代码推送至远程的test分支
+
+
+
